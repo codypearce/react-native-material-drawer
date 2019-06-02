@@ -3,22 +3,38 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "storybook": "storybook start -p 7007",
+    "storybook-web": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -c .storybook -s ./public -o gh",
+    "deploy-docs": "gh-pages -d gh",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
   "peerDependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.8"
+    "react-native": "0.59.8",
+    "react-native-web": "0.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/runtime": "^7.4.5",
+    "@storybook/react": "^5.0.6",
+    "@storybook/react-native": "^4.1.18",
     "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
+    "react": "^16.8.3",
+    "react-native": "0.59.8",
+    "react-native-web": "0.11.2",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "dependencies": {
+    "@storybook/addon-storysource": "^5.0.11",
+    "@storybook/theming": "^5.0.11",
+    "react-dom": "^16.8.6"
   }
 }

@@ -56,3 +56,4 @@ buck-out/
 *.jsbundle
 ios/Index
 ios/build
+gh
