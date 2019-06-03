@@ -69,14 +69,13 @@ const pageWidth = Platform.OS == "web" ? 600 : Dimensions.get("window").width;
 export default storiesOf("Drawer", module)
   .addParameters({ jest: ["Drawer"] })
   .add("Simple", () => (
-    <Container scroll style={{ padding: 0 }}>
+    <Container scroll style={{ padding: 0, flex: 1 }}>
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
               pageWidth={pageWidth}
-              pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               animationTime={250}
@@ -104,7 +103,6 @@ export default storiesOf("Drawer", module)
             <Drawer
               open={state.isOpen}
               pageWidth={pageWidth}
-              pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               animationTime={250}
@@ -127,7 +125,6 @@ export default storiesOf("Drawer", module)
             <Drawer
               open={state.isOpen}
               pageWidth={pageWidth}
-              pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               appbar={<AppbarContent isOpen={state.isOpen} />}
@@ -172,7 +169,6 @@ export default storiesOf("Drawer", module)
             <Drawer
               open={state.isOpen}
               pageWidth={pageWidth}
-              pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               scrimColor={"#E91E63"}
@@ -371,10 +367,12 @@ export default storiesOf("Drawer", module)
 const styles = StyleSheet.create({
   container: {
     zIndex: 1,
-    position: "relative"
+    position: "relative",
+    flex: 1
   },
   body: {
     width: pageWidth,
-    height: 500
+    height: 1000,
+    flex: 1
   }
 });

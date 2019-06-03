@@ -8,7 +8,8 @@
     "build-storybook": "build-storybook -c .storybook -s ./public -o gh",
     "deploy-docs": "gh-pages -d gh",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
   },
   "peerDependencies": {
     "react": "16.8.3",
