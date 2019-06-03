@@ -1,8 +1,29 @@
 # react-native-material-drawer
 
-React Native Material Drawer for iOS, Android, Web, Electron, and other platforms. 
+React Native Material Drawer for iOS, Android, Web, Electron, and other platforms. If you need more cross-platform material components, check out [Material Bread](https://github.com/codypearce/material-bread).
 
-### [Demos](https://codypearce.github.io/react-native-material-drawer/.)
+### [Storybook Demos](https://codypearce.github.io/react-native-material-drawer/.)
+
+
+### Modal Drawer
+
+<p>
+<img height="600" src="https://i.imgur.com/TSIqKRM.gif" alt="adf" align="center">
+<img height="600" src="https://i.imgur.com/1Ws0IVw.gif" alt="adf" align="center">
+</p>
+
+### Push Drawer
+
+<p>
+<img height="600" src="https://i.imgur.com/nIEd8Gu.gif" alt="adf" align="center">
+<img height="600" src="https://i.imgur.com/IIiMtah.gif" alt="adf" align="center">
+</p>
+
+### Permanent
+
+<p>
+<img src="https://i.imgur.com/6Vb32ht.png" alt="adf" align="center">
+</p>
 
 ### Table of Contents
 
