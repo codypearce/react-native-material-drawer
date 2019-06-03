@@ -1,7 +1,6 @@
 {
   "name": "react-native-material-drawers",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "storybook": "storybook start -p 7007",
     "storybook-web": "start-storybook -p 9009 -s public",
@@ -38,5 +37,24 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "react native",
+    "material design",
+    "react native drawers",
+    "drawers"
+  ],
+  "description": "React Native Material Drawer for iOS, Android, Web, Electron, and other platforms",
+  "homepage": "https://codypearce.github.io/react-native-material-drawer/?path=/story/*",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codypearce/react-native-material-drawer"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codypearce/react-native-material-drawer/issues"
   }
 }
