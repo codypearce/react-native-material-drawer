@@ -1,6 +1,8 @@
 # react-native-material-drawer
 
-React Native Material Drawer for iOS, Android, Web, and Electron.
+React Native Material Drawer for iOS, Android, Web, Electron, and other platforms. 
+
+### [Demos](https://codypearce.github.io/react-native-material-drawer/.)
 
 ### Table of Contents
 
