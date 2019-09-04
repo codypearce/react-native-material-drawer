@@ -8,7 +8,7 @@ import {
   Platform,
   TouchableWithoutFeedback
 } from "react-native";
-
+import shadow from "./shadow";
 import styles from "./Drawer.styles";
 
 const needsSafeArea = Platform.OS === "ios" && parseInt(Platform.Version, 10);
