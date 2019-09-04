@@ -9,7 +9,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist --ignore \"**/*.test.js\""
   },
   "peerDependencies": {
     "react": "16.8.3",
@@ -65,7 +65,8 @@
       "@babel/preset-env"
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties"
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-runtime"
     ]
   }
 }
