@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-drawer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "storybook": "storybook start -p 7007",
     "storybook-web": "start-storybook -p 9009 -s public",
@@ -16,11 +16,16 @@
     "react-native": "0.59.8",
     "react-native-web": "0.11.2"
   },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@babel/runtime": "^7.4.5",
+    "@babel/runtime": "^7.5.5",
     "@sambego/storybook-state": "^1.3.4",
     "@storybook/addon-storysource": "^5.0.11",
     "@storybook/react": "^5.0.6",
@@ -59,14 +64,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/codypearce/react-native-material-drawer/issues"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-transform-runtime"
-    ]
   }
 }
