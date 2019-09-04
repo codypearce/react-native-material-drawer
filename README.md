@@ -4,7 +4,6 @@ React Native Material Drawer for iOS, Android, Web, Electron, and other platform
 
 ### [Storybook Demos](https://codypearce.github.io/react-native-material-drawer/.)
 
-
 ### Modal Drawer
 
 <p>
@@ -32,6 +31,7 @@ React Native Material Drawer for iOS, Android, Web, Electron, and other platform
 - [Props](#props)
 
 ### Installation
+
 ```bash
 npm install react-native-material-drawer --save
 ```
@@ -39,40 +39,54 @@ npm install react-native-material-drawer --save
 ### Usage
 
 ```
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Drawer } from 'react-native-material-drawer';
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { Drawer } from "react-native-material-drawer";
 
 const styles = {
   container: {
-    width: '100%',
+    width: "100%",
+    height: "100vh",
   },
   body: {
-    backgroundColor: '#eee',
-  },
+    backgroundColor: "#eee",
+    height: "100vh",
+  }
 };
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isOpen: false
-    }
+    };
   }
   render() {
     return (
       <View style={styles.container}>
         <Drawer
           open={this.state.isOpen}
-          drawerContent={<View><Text>Drawer Content</Text></View>}
+          drawerContent={
+            <View>
+              <Text>Drawer Content</Text>
+            </View>
+          }
           onClose={() => this.setState({ isOpen: false })}
-          animationTime={250}>
+          animationTime={250}
+        >
           <View style={styles.body}>
-             <View style={{ marginTop: 20, alignItems: 'center', width: '100%', flex: 1 }}>
-              <Text style={{ marginBottom: 20 }}>
-                This is a page
-              </Text>
-              <TouchableOpacity onTouch={() => this.setState({ isOpen: !this.state.isOpen })}>
+            <View
+              style={{
+                marginTop: 20,
+                alignItems: "center",
+                width: "100%",
+                flex: 1
+              }}
+            >
+              <Text style={{ marginBottom: 20 }}>This is a page</Text>
+              <TouchableOpacity
+                onPress={() => this.setState({ isOpen: !this.state.isOpen })}
+              >
                 <Text>Toggle</Text>
               </TouchableOpacity>
             </View>
@@ -82,12 +96,13 @@ class App extends Component {
     );
   }
 }
+
 ```
 
 ### Props
 
 | Name                  | Description                                                                | Type   | Default      |
-|-----------------------|----------------------------------------------------------------------------|--------|--------------|
+| --------------------- | -------------------------------------------------------------------------- | ------ | ------------ |
 | animationTime         | How long the drawer animation should be, in ms                             | number | 200          |
 | appbar                | Render appbar above drawer and page content for clipping purposes          | node   |              |
 | contentContainerStyle | Styles wrapper around page content                                         | object |              |
