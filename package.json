@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-drawer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "storybook": "storybook start -p 7007",
     "storybook-web": "start-storybook -p 9009 -s public",
