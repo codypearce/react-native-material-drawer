@@ -57,3 +57,4 @@ buck-out/
 ios/Index
 ios/build
 gh
+dist
