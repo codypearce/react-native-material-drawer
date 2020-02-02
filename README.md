@@ -38,7 +38,7 @@ npm install react-native-material-drawer --save
 
 ### Usage
 
-```
+```jsx
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Drawer } from "react-native-material-drawer";
@@ -55,12 +55,10 @@ const styles = {
 };
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-  }
+  state = {
+    isOpen: false,
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -72,8 +70,7 @@ export default class App extends Component {
             </View>
           }
           onClose={() => this.setState({ isOpen: false })}
-          animationTime={250}
-        >
+          animationTime={250}>
           <View style={styles.body}>
             <View
               style={{
@@ -81,12 +78,9 @@ export default class App extends Component {
                 alignItems: "center",
                 width: "100%",
                 flex: 1
-              }}
-            >
+              }}>
               <Text style={{ marginBottom: 20 }}>This is a page</Text>
-              <TouchableOpacity
-                onPress={() => this.setState({ isOpen: !this.state.isOpen })}
-              >
+              <TouchableOpacity onPress={() => this.setState({ isOpen: !this.state.isOpen })}>
                 <Text>Toggle</Text>
               </TouchableOpacity>
             </View>
