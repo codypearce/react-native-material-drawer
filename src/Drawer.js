@@ -33,6 +33,7 @@ export default class Drawer extends PureComponent {
     width: PropTypes.number,
     fullHeight: PropTypes.bool,
     position: PropTypes.string,
+    direction: PropTypes.string,
 
     appbar: PropTypes.node,
     scrim: PropTypes.bool,
@@ -52,7 +53,8 @@ export default class Drawer extends PureComponent {
     scrimOpacity: 0.4,
     scrim: true,
     type: "modal",
-    position: "absolute"
+    position: "absolute",
+    direction: "left"
   };
 
   state = {
@@ -100,11 +102,11 @@ export default class Drawer extends PureComponent {
 
   openDrawer = () => {
     const { drawerWidth, leftOffset, backdropFade } = this.state;
-    const { animationTime, scrimOpacity } = this.props;
+    const { animationTime, direction, scrimOpacity } = this.props;
 
     Animated.parallel([
       Animated.timing(leftOffset, {
-        toValue: drawerWidth,
+        toValue: direction === "left" ? drawerWidth : -drawerWidth,
         duration: animationTime
       }),
       Animated.timing(backdropFade, {
@@ -191,7 +193,14 @@ export default class Drawer extends PureComponent {
   }
 
   _renderAppContent() {
-    const { children, appbar, type, open, contentContainerStyle } = this.props;
+    const {
+      children,
+      direction,
+      appbar,
+      type,
+      open,
+      contentContainerStyle
+    } = this.props;
     const { leftOffset } = this.state;
 
     const isPush = type == "push";
@@ -203,7 +212,9 @@ export default class Drawer extends PureComponent {
           {appbar ? this._renderAppBar() : null}
           <Animated.View
             style={{
-              transform: [{ translateX: leftOffset }],
+              transform: [
+                { translateX: direction === "left" ? leftOffset : -leftOffset }
+              ],
               flex: 1,
               width:
                 open && Platform.OS == "web" && isPermanent
@@ -226,6 +237,7 @@ export default class Drawer extends PureComponent {
 
   _renderDrawer() {
     const {
+      direction,
       drawerContent,
       type,
       open,
@@ -241,18 +253,20 @@ export default class Drawer extends PureComponent {
     const offsetDrawerShadow = isPermanent || open ? 0 : 5;
     const shadowImplemented = isPush || isPermanent ? shadow(0) : shadow(8);
 
+    const rightOrLeft = { [direction]: -drawerWidth - offsetDrawerShadow };
+
     return (
       <Fragment>
         <Animated.View
           style={[
-            styles.drawer,
+            direction === "left" ? styles.drawerLeft : styles.drawerRight,
             {
               position: position,
               width: drawerWidth,
-              left: -drawerWidth - offsetDrawerShadow,
               top: appbarHeight,
               height: fullHeight ? "100%" : screenHeight,
               transform: [{ translateX: leftOffset }],
+              ...rightOrLeft,
               ...shadowImplemented
             },
             drawerStyle

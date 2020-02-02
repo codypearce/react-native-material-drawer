@@ -16,11 +16,19 @@ const styles = StyleSheet.create({
     left: 0,
     zIndex: 0,
   },
-  drawer: {
+  drawerLeft: {
     position: 'absolute',
     zIndex: 100,
     borderRightWidth: 1,
     borderRightColor: 'rgba(0,0,0,.12)',
+    borderStyle: 'solid',
+    backgroundColor: 'white',
+  },
+  drawerRight: {
+    position: 'absolute',
+    zIndex: 100,
+    borderLeftWidth: 1,
+    borderLeftColor: 'rgba(0,0,0,.12)',
     borderStyle: 'solid',
     backgroundColor: 'white',
   },
