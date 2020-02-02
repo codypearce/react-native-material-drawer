@@ -113,6 +113,7 @@ export default class App extends Component {
 | pageHeight            | Override calculated pageHeight, useful for demos as shown                  | number | ScreenHeight |
 | pageWidth             | Override calculated pageWidth, useful pages that do not take up full space | number | ScreenWidth  |
 | position              | Position of drawer                                                         | string | absolute     |
+| direction             | Where should the drawer open: `left` or `right`                            | string | left         |
 | open                  | Whether drawer is shown or hidden                                          | bool   | false        |
 | style                 | Styles container element                                                   | object |              |
 | scrim                 | Whether scrim is shown                                                     | bool   | true         |
