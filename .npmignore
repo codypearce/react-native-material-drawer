@@ -103,5 +103,5 @@ src/storybook/**/*
 **/*/__snapshots__
 metro.config.js
 ./index.js
-dist/**.test.js
-dist/**.stories.js
+dist/**/*.test.js
+dist/**/*.stories.js
